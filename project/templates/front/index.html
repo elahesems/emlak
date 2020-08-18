@@ -22,22 +22,23 @@
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
-  <!-- Indicators -->
+  &lt;!&ndash; Indicators &ndash;&gt;
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
   </ul>
 
-  <!-- The slideshow -->
+  &lt;!&ndash; The slideshow &ndash;&gt;
 
   <div class="carousel-inner">
+
 
             <div class="carousel-item active">
                 {% for slider in sliders %}
                   <img src="{{ slider.image.url }}" alt="Los Angeles" width="1100" height="500">
 
-                  <!-- Left and right controls -->
+                  &lt;!&ndash; Left and right controls &ndash;&gt;
                   <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                   </a>
@@ -54,12 +55,7 @@
 </div>
 
 
-
-
-
-
-{% comment %}
-
+<!--/*****************************************************************-->
     <div class="slider-area">
 
         <div class="slider-active">
@@ -81,7 +77,7 @@
             {% endfor %}
         </div>
     </div>
-{% endcomment %}
+
 
  {% comment %}           <div class="slider-container overlay" >
                 {% for slide in sliders %}
@@ -92,7 +88,7 @@
                         <img src="{{ slide.image.url }}" alt="" title="#htmlcaption1"/>
                     </div>
 
-                    <!-- Slider Caption 1 -->
+                    &lt;!&ndash; Slider Caption 1 &ndash;&gt;
 
                     <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
                        <div class="display-table">

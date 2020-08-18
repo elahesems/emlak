@@ -8,3 +8,5 @@ def index(request):
     sliders = Sliders.objects.all()
     context = {'sliders':sliders}
     return render(request,'front/index.html',context)
+
+
