@@ -22,6 +22,10 @@ class Homes(models.Model):
         ('dollar','$')
 
     )
+    type_of=(
+        ('kiralik','kiralık'),
+        ('satlik','satlık')
+    )
     name=models.CharField(max_length=150)
     price=models.IntegerField()
     price_unit=models.CharField(max_length=150,choices=units,default='tl')
@@ -29,6 +33,11 @@ class Homes(models.Model):
     square=models.IntegerField()
     parking=models.IntegerField()
     rooms=models.IntegerField()
+    image = models.ImageField(null=True, blank=True)
+    address=models.CharField(max_length=150,null=True,blank=True)
+    type=models.CharField(max_length=150,choices=type_of,default='satlik')
+
+
 
     def __str__(self):
         return self.name
