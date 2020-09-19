@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfc43c59-6b0d-4f70-a9a7-27ae12b352c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/front_static/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/front_static/css/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/front/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/ui/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/ui/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/ui/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/ui/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/ui/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/ui/views.py" afterDir="false" />
@@ -36,6 +39,17 @@
       </list>
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -48,7 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,6 +80,10 @@
       <updated>1597759868198</updated>
       <workItem from="1597759869264" duration="5093000" />
       <workItem from="1597779609908" duration="1830000" />
+      <workItem from="1597921769727" duration="4323000" />
+      <workItem from="1597934122653" duration="110000" />
+      <workItem from="1600501492282" duration="2008000" />
+      <workItem from="1600505385452" duration="244000" />
     </task>
     <servers />
   </component>
@@ -89,9 +107,19 @@
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="1527" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.768/0.27.1366.741@1366.0.1366.768" timestamp="1597780496359" />
-    <state x="1847" y="140" width="424" height="513" key="FileChooserDialogImpl" timestamp="1597763765071">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="508" y="162" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600505627092">
+      <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state x="1847" y="140" width="424" height="513" key="FileChooserDialogImpl/1366.0.1366.768/0.27.1366.741@1366.0.1366.768" timestamp="1597763765071" />
+    <state x="1407" y="162" width="424" height="484" key="FileChooserDialogImpl/0.27.2732.741@0.27.2732.741" timestamp="1597933623127" />
+    <state x="1847" y="140" width="424" height="513" key="FileChooserDialogImpl/1366.0.1366.768/0.27.1366.741@1366.0.1366.768" timestamp="1597934231351" />
+    <state x="508" y="162" width="424" height="484" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1600505627092" />
+    <state x="394" y="135" width="618" height="522" key="find.popup" timestamp="1600502920584">
+      <screen x="41" y="27" width="1325" height="741" />
+    </state>
+    <state x="394" y="135" width="618" height="522" key="find.popup/41.27.1325.741@41.27.1325.741" timestamp="1600502920584" />
+    <state x="366" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600502782218">
+      <screen x="41" y="27" width="1325" height="741" />
+    </state>
+    <state x="366" y="89" width="672" height="678" key="search.everywhere.popup/41.27.1325.741@41.27.1325.741" timestamp="1600502782218" />
   </component>
 </project>
