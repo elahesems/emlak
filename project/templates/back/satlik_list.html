@@ -1,0 +1,66 @@
+{% extends 'back/master.html' %}
+{% load static %}
+{% block content %}
+                      <div id="page-content">
+        <!-- Datatables Header -->
+
+
+        <div class="block full">
+            <div class="block-title">
+                <h2><strong>Course</strong> List</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                    <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center "><i class="hi hi-camera"></i></th>
+                        <th class="text-center ">Home Name</th>
+                        <th class="text-center ">Price</th>
+                        <th class="text-center ">bathrooms</th>
+                        <th class="text-center ">m2</th>
+                        <th class="text-center ">rooms</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    </thead>
+
+                    {% for home in homes %}
+                        <tr>
+                            <td class="text-center">{{ home.id }}</td>
+                            <td class="text-center">
+                                {% if home.image %}
+                                    <img src="{{ home.image.url }}" style="width: 200px; height: 200px"
+                                         alt="image"
+                                         >
+                                {% else %}
+                                    <h4>No image</h4>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">{{ home.name }}</td>
+                            <td class="text-center">{{ home.price }} {{ home.price_unit }} </td>
+                            <td class="text-center" width="10%">{{ home.bathrooms }} </td>
+                            <td class="text-center">{{ home.square }}</td>
+                            <td class="text-center">{{ home.rooms }} </td>
+
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a href="{% url 'edit_satlik' home.id %}" data-toggle="tooltip" title="Edit"
+                                       class="btn btn-default"><i class="fa fa-pencil">EDIT</i></a>
+                                    <a href="{% url 'delete_satlik' home.id %}" data-toggle="tooltip" title="Delete"
+                                       class="btn btn-danger"><i class="fa fa-times">DELETE</i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <!-- END Datatables Content -->
+
+{% endblock content %}
+

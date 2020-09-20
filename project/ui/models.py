@@ -26,16 +26,17 @@ class Homes(models.Model):
         ('kiralik','kiralık'),
         ('satlik','satlık')
     )
-    name=models.CharField(max_length=150)
-    price=models.IntegerField()
+    name=models.CharField(max_length=150, verbose_name='Home name')
+    price=models.CharField(max_length=150)
     price_unit=models.CharField(max_length=150,choices=units,default='tl')
-    bathrooms=models.IntegerField()
-    square=models.IntegerField()
-    parking=models.IntegerField()
-    rooms=models.IntegerField()
+    bathrooms=models.CharField(max_length=150)
+    square=models.CharField(max_length=150)
+    parking=models.CharField(max_length=150)
+    rooms=models.CharField(max_length=150)
     image = models.ImageField(null=True, blank=True)
     address=models.CharField(max_length=150,null=True,blank=True)
-    type=models.CharField(max_length=150,choices=type_of,default='satlik')
+    type=models.CharField(max_length=150,choices=type_of,default='kiralik')
+    #status = models.BooleanField(default=True,verbose_name='gosterilsin mi?')
 
 
 

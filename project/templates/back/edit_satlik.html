@@ -1,0 +1,119 @@
+{% extends 'back/master.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+                            <div class="col-md-12">
+                                <!-- Basic Form Elements Block -->
+                                <div class="block">
+
+                                    <!-- Basic Form Elements Content -->
+                                    <form action="#" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                                        {% csrf_token %}
+                                        {% if messages %}
+
+                                                    <ul class="messages">
+                                                        {% for message in messages %}
+                                                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><span
+                                                                    style="color: red">{{ message }}</span></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                        {% endif %}
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Home Name</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="name" class="form-control" placeholder="Text" value="{{ home.name }}">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Price</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="price" class="form-control" placeholder="Text" value="{{ home.price }}">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input" >Price unit</label>
+                                            <div class="col-md-5">
+                                                <select id="example-select" name="price_unit" class="form-control" size="1" >
+                                                    <option value="0">{{ home.price_unit }}</option>
+                                                    <option value="tl">₺</option>
+                                                    <option value="euro">€</option>
+                                                    <option value="dollar">$</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Bathrooms</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="bathrooms" class="form-control" value="{{ home.bathrooms }}" placeholder="Text">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">square</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="square" class="form-control" value="{{ home.square }}" placeholder="Text">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">parking</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="parking" value="{{ home.parking }}" class="form-control" placeholder="Text">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">rooms</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="rooms" value="{{ home.rooms }}" class="form-control" placeholder="Text">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">address</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="address" value="{{ home.address }}" class="form-control" placeholder="Text">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Type</label>
+                                            <div class="col-md-5">
+
+                                                <input type="text" readonly id="example-text-input" name="type" value="{{ home.type }}" class="form-control" placeholder="Satlık" value="satlik">
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                            <label class="col-md-3 control-label" for="example-select">Image</label>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                <input type="file" name="image" placeholder="select image">
+
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="{{ home.image.url }}" style="width: 200px">
+                                                </div>
+
+                                            </div>
+
+
+                                        <div class="col-md-12">
+                                                <input type="submit">
+                                                </div>
+
+
+
+                                    </form>
+                                <br><br><br><br><br><br>
+                                </div></div></div>
+
+
+{% endblock content %}
