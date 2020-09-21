@@ -55,10 +55,11 @@ def new_home(request):
             return redirect('satlik_list')
         except:
             pass
-    return render(request,'back/new_home.html')
+    return render(request, 'back/new_satlik.html')
 
 def satlik_list(request):
-    homes=Homes.objects.all()
+    homes=Homes.objects.filter(type='satlik')
+
     context={'homes':homes}
 
     return render(request,'back/satlik_list.html',context)
@@ -93,10 +94,15 @@ def edit_satlik(request,pk):
     context = {'home': home}
     return render(request,'back/edit_satlik.html',context)
 
-def delete_satlik(request,pk):
+def delete_method(request,pk):
     home = Homes.objects.get(pk=pk)
-    home.delete()
-    return redirect('satlik_list')
+    if home.type == 'satlik':
+        home.delete()
+        return redirect('satlik_list')
+    elif home.type == 'kiralik':
+        home.delete()
+        return redirect('new_kiralik_list')
+
 
 
 
@@ -108,7 +114,7 @@ def new_kiralik(request):
             form = CreateHome(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
-                return redirect('panel')
+                return redirect('new_kiralik_list')
             else:
                 messages.info(request, 'valid değil!')
                 return redirect('new_kiralik')
@@ -119,3 +125,29 @@ def new_kiralik(request):
     context = {'form':form}
 
     return render(request, 'back/new_kiralik.html', context)
+
+
+def new_kiralik_list(request):
+    kiraliklar = Homes.objects.filter(type='kiralik')
+    context = {'homes':kiraliklar}
+    return render(request, 'back/new_kiralik_list.html', context)
+
+
+def edit_kiralik(request,pk):
+    home = Homes.objects.get(pk=pk)
+    form = CreateHome(instance=home)
+    if request.method == "POST":
+        form = CreateHome(request.POST,request.FILES,instance=home)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('new_kiralik_list')
+            except:
+                messages.info(request, 'Error occurred! try again!')
+                return redirect('edit_kiralik')
+        else:
+            messages.info(request, 'Error occurred! try again!')
+            return redirect('edit_kiralik')
+
+    context={'form':form}
+    return render(request,'back/edit_kiralik.html',context)

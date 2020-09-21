@@ -1,0 +1,40 @@
+{% extends 'back/master.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="row">
+                            <div class="col-md-12">
+                                <!-- Basic Form Elements Block -->
+                                <div class="block">
+
+                                    <!-- Basic Form Elements Content -->
+                                    <form action="#" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                                        {% csrf_token %}
+                                        {% if messages %}
+
+                                                    <ul class="messages">
+                                                        {% for message in messages %}
+                                                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><span
+                                                                    style="color: red">{{ message }}</span></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                        {% endif %}
+                                        <div style="width: 350px;padding-left: 100px">
+                                            {{ form|crispy }}
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                                <input type="submit">
+                                                </div>
+
+
+
+                                    </form>
+                                <br><br><br><br><br><br>
+                                </div></div></div>
+
+
+{% endblock content %}
