@@ -43,11 +43,8 @@ def new_home(request):
             address=request.POST.get('address')
             type=request.POST.get('type')
 
-            if price is int:
-                pass
-            else:
-                messages.info(request, 'please enter an integer to price')
-                return redirect('new_home')
+
+
 
             new = Homes(name=name,price=price,price_unit=price_unit,bathrooms=bathrooms,square=square,parking=parking,rooms=rooms,image=image,address=address,type=type)
             new.save()
